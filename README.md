@@ -1,2 +1,2 @@
 # Git_Practice
-Practicing what are all the commands and other things in github.
+Practicing git and it's commands for pushing the changes from my branch to the main branch
