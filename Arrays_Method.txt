@@ -1,0 +1,193 @@
+Sure! Here are some of the commonly used methods from the Arrays class in Java, along with brief descriptions and examples:
+
+1. asList()
+Converts an array to a List.
+
+java
+Copy code
+String[] array = {"apple", "banana", "cherry"};
+List<String> list = Arrays.asList(array);
+
+
+2. binarySearch()
+Searches for a specific element in a sorted array.
+
+java
+Copy code
+int[] numbers = {1, 2, 3, 4, 5};
+int index = Arrays.binarySearch(numbers, 3); // Returns the index of 3
+
+
+3. copyOf()
+Copies an array to a new array of a specified length.
+
+java
+Copy code
+int[] original = {1, 2, 3};
+int[] copy = Arrays.copyOf(original, 5); // [1, 2, 3, 0, 0]
+
+
+4. copyOfRange()
+Copies a range of an array to a new array.
+
+java
+Copy code
+int[] original = {1, 2, 3, 4, 5};
+int[] rangeCopy = Arrays.copyOfRange(original, 1, 4); // [2, 3, 4]
+
+
+5. equals()
+Checks if two arrays are equal.
+
+java
+Copy code
+int[] array1 = {1, 2, 3};
+int[] array2 = {1, 2, 3};
+boolean isEqual = Arrays.equals(array1, array2); // true
+
+
+6. fill()
+Fills an array with a specified value.
+
+java
+Copy code
+int[] array = new int[5];
+Arrays.fill(array, 7); // [7, 7, 7, 7, 7]
+
+
+7. sort()
+Sorts an array.
+
+java
+Copy code
+int[] array = {3, 1, 4, 1, 5};
+Arrays.sort(array); // [1, 1, 3, 4, 5]
+
+
+8. toString()
+Returns a string representation of the array.
+
+java
+Copy code
+int[] array = {1, 2, 3};
+String arrayString = Arrays.toString(array); // "[1, 2, 3]"
+
+
+9. stream()
+Returns a sequential stream with the specified array as its source.
+
+java
+Copy code
+int[] array = {1, 2, 3, 4, 5};
+IntStream stream = Arrays.stream(array);
+stream.forEach(System.out::println); // Prints 1 2 3 4 5
+
+
+10. setAll()
+Sets all elements of an array using a generator function.
+
+java
+Copy code
+int[] array = new int[5];
+Arrays.setAll(array, i -> i * 2); // [0, 2, 4, 6, 8]
+
+
+11. parallelSort()
+Sorts an array in parallel.
+
+java
+Copy code
+int[] array = {5, 3, 8, 1, 2};
+Arrays.parallelSort(array); // [1, 2, 3, 5, 8]
+
+
+12. spliterator()
+Creates a Spliterator over the elements in the array.
+
+java
+Copy code
+int[] array = {1, 2, 3, 4, 5};
+Spliterator.OfInt spliterator = Arrays.spliterator(array);
+spliterator.forEachRemaining(System.out::println); // Prints 1 2 3 4 5
+
+
+13. mismatch()
+Finds and returns the index of the first mismatch between two arrays, or -1 if no mismatch is found.
+
+java
+Copy code
+int[] array1 = {1, 2, 3};
+int[] array2 = {1, 2, 4};
+int mismatchIndex = Arrays.mismatch(array1, array2); // 2
+
+
+14. hashCode()
+Returns a hash code based on the contents of the array.
+
+java
+Copy code
+int[] array = {1, 2, 3};
+int hashCode = Arrays.hashCode(array); // Unique hash code for the array
+
+
+15. deepEquals()
+Compares two arrays deeply, i.e., it compares the nested arrays as well.
+
+java
+Copy code
+int[][] array1 = {{1, 2}, {3, 4}};
+int[][] array2 = {{1, 2}, {3, 4}};
+boolean isDeepEqual = Arrays.deepEquals(array1, array2); // true
+
+
+16. deepToString()
+Returns a string representation of a deep array (nested arrays).
+
+java
+Copy code
+int[][] array = {{1, 2}, {3, 4}};
+String arrayString = Arrays.deepToString(array); // "[[1, 2], [3, 4]]"
+
+
+17. parallelPrefix()
+Performs a parallel prefix operation on the array.
+
+java
+Copy code
+int[] array = {1, 2, 3, 4};
+Arrays.parallelPrefix(array, Integer::sum); // [1, 3, 6, 10]
+Example Code:
+Here's an example demonstrating some of these methods:
+
+java
+Copy code
+import java.util.Arrays;
+import java.util.List;
+
+public class ArraysMethodsExample {
+    public static void main(String[] args) {
+        int[] numbers = {3, 5, 1, 4, 2};
+        System.out.println("Original Array: " + Arrays.toString(numbers));
+
+        // Sorting the array
+        Arrays.sort(numbers);
+        System.out.println("Sorted Array: " + Arrays.toString(numbers));
+
+        // Binary search in the sorted array
+        int index = Arrays.binarySearch(numbers, 4);
+        System.out.println("Index of 4: " + index);
+
+        // Copying the array
+        int[] copy = Arrays.copyOf(numbers, numbers.length);
+        System.out.println("Copy of Array: " + Arrays.toString(copy));
+
+        // Filling the array
+        Arrays.fill(copy, 9);
+        System.out.println("Array filled with 9s: " + Arrays.toString(copy));
+
+        // Stream from array
+        List<Integer> numberList = Arrays.stream(numbers).boxed().toList();
+        System.out.println("Stream to List: " + numberList);
+    }
+}
+You can practice these methods to get a better understanding of how they work and how to use them effectively.
